@@ -13,7 +13,7 @@ const classroom = {
 export default function Counter(props: CounterProps) {
   const [answers, setAnswers] = useState<string[]>([])
   const [c, setC] = useState("xii mipa 1")
-  const [student, setStudent] = useState(6)
+  const [student, setStudent] = useState(1)
   const [subject, setSubject] = useState("mat_w")
   const [err, setErr] = useState(null)
 
