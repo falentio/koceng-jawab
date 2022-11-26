@@ -13,7 +13,7 @@ const classroom = {
 export default function Counter(props: CounterProps) {
   const [answers, setAnswers] = useState<string[]>([])
   const [c, setC] = useState("xii mipa 1")
-  const [student, setStudent] = useState(1)
+  const [student, setStudent] = useState(6)
   const [subject, setSubject] = useState("mat_w")
   const [err, setErr] = useState(null)
 
@@ -64,7 +64,7 @@ export default function Counter(props: CounterProps) {
       </div>
         {answers.map((a, i) => (
           <div class="flex flex-row gap-2">
-            <span> {i}. </span>
+            <span> {i + 1}. </span>
             <span> {a} </span>
           </div>
         ))}
