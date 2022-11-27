@@ -25,9 +25,7 @@ export default function Counter(props: CounterProps) {
       const url = `/api/questions?subject=${subject}&student=${classroom[c] + student}`
       const res = await fetch(url)
       const json = await res.json()
-      if (url === `/api/questions?subject=${subject}&student=${classroom[c] + student}`) {
-        setAnswers(json.answers)
-      }
+      setAnswers(json.answers)
     } catch (e) {
       setErr(e)
     } finally {
