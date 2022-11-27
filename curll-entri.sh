@@ -1,4 +1,4 @@
-curl 'https://script.google.com/macros/s/AKfycby1LQUD6BfG4lDkTgZgbnkCJXgyBHe8-h3JwCQvLoIb3YHeRv7MuIBmOpeIxi4z4muHNw/callback?nocache_id=23' \
+curl 'https://script.google.com/macros/s/AKfycby1LQUD6BfG4lDkTgZgbnkCJXgyBHe8-h3JwCQvLoIb3YHeRv7MuIBmOpeIxi4z4muHNw/callback?nocache_id=277' \
   -H 'authority: script.google.com' \
   -H 'x-same-domain: 1' \
   -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
@@ -11,6 +11,5 @@ curl 'https://script.google.com/macros/s/AKfycby1LQUD6BfG4lDkTgZgbnkCJXgyBHe8-h3
   -H 'sec-fetch-dest: empty' \
   -H 'referer: https://script.google.com/macros/s/AKfycby1LQUD6BfG4lDkTgZgbnkCJXgyBHe8-h3JwCQvLoIb3YHeRv7MuIBmOpeIxi4z4muHNw/exec' \
   -H 'accept-language: en-US,en;q=0.9' \
-  -H 'cookie: 1P_JAR=2022-11-26-01; AEC=AakniGP_WfDfaUoRASA4teEfgzUzpxai-pOfAW0QgSvOXG_RAXAuceRXnqw; NID=511=rrly3ll_z7HPwxPjT231TsaDIwnNRE20L4aoR6Q7LbceTvB7c6EaHYiq1czHDadO5pdKTtLwd4_i6cYIsnoOMTSJNJsa9a8wgsdfoDBz9adoUOJqG_o2bF_e7bB9_unozu3jT-tfX08e0sZYULbeJb5F5dMGIEZV290nDoRxnVWUWDDY' \
-  --data-raw 'request=%5B%22entriJawab%22%2C%22%5B%5C%22https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1b7FaaOvasNEuGs7aMOg9p-CeyMnSuaT7noFeDjJy5kE%2Fedit%3Fusp%3Ddrivesdk%5C%22%2C%5C%22(1)%5C%22%2C28%2C34%2C%5C%22$JAWAB%5C%22%5D%22%2Cnull%2C%5B0%5D%2Cnull%2Cnull%2Ctrue%2C0%5D' \
+  --data-raw 'request=%5B%22entriJawab%22%2C%22%5B%5C%22https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1b7FaaOvasNEuGs7aMOg9p-CeyMnSuaT7noFeDjJy5kE%2Fedit%3Fusp%3Ddrivesdk%5C%22%2C%5C%22(1)%5C%22%2C28%2C34%2C%5C%22P%5C%22%5D%22%2Cnull%2C%5B0%5D%2Cnull%2Cnull%2Ctrue%2C0%5D' \
   --compressed
