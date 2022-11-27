@@ -16,15 +16,19 @@ export default function Counter(props: CounterProps) {
   const [student, setStudent] = useState(1)
   const [subject, setSubject] = useState("mat_w")
   const [err, setErr] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   useEffect(async () => {
     try {
       setAnswers([])
+      setLoading(true)
       const res = await fetch(`/api/questions?subject=${subject}&student=${classroom[c] + student}`)
       const json = await res.json()
       setAnswers(json.answers)
     } catch (e) {
       setErr(e)
+    } finally {
+      setLoading(false)
     }
   }, [student, subject])
 
@@ -62,7 +66,7 @@ export default function Counter(props: CounterProps) {
           <input type="number" min="1" max="35" class="bg-gray-100 h-10" onChange={(e) => setStudent(e.target.value + 0)} value={student}/>
         </label>
       </div>
-        {answers.map((a, i) => (
+        {!loading && answers.map((a, i) => (
           <div class="flex flex-row gap-2">
             <span> {i + 1}. </span>
             <span> {a} </span>
