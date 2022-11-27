@@ -78,7 +78,11 @@ export default function Counter(props: CounterProps) {
         </label>
         <label class="flex flex-col">
           <span> Absen </span>
-          <input type="number" min="1" max="35" class="bg-gray-100 h-10" onChange={(e) => setStudent(+e.target.value)} value={student}/>
+          <input type="number" min="1" max="35" class="bg-gray-100 h-10" 
+            onChange={(e) => setStudent(+e.target.value)} 
+            onKeyDown={(e) => setStudent(+e.target.value)} 
+            onKeyUp={(e) => setStudent(+e.target.value)} 
+            value={student}/>
         </label>
         <button class="w-full bg-blue-400 disabled:bg-gray-200" onClick={fetchAnswers} disabled={loading}> Ok </button>
       </div>
