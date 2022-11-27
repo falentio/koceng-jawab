@@ -59,7 +59,7 @@ export default function Counter(props: CounterProps) {
         </label>
         <label class="flex flex-col">
           <span> Absen </span>
-          <input type="number" min="1" max="35" class="bg-gray-100 h-10" onChange={(e) => setStudent(e.target.value + 0)} value={student}/>
+          <input type="number" min="1" max="35" class="bg-gray-100 h-10" onChange={(e) => setStudent(+e.target.value)} value={student}/>
         </label>
       </div>
         {answers.map((a, i) => (
