@@ -22,9 +22,12 @@ export default function Counter(props: CounterProps) {
     try {
       setAnswers([])
       setLoading(true)
-      const res = await fetch(`/api/questions?subject=${subject}&student=${classroom[c] + student}`)
+      const url = `/api/questions?subject=${subject}&student=${classroom[c] + student}`
+      const res = await fetch(url)
       const json = await res.json()
-      setAnswers(json.answers)
+      if (url === `/api/questions?subject=${subject}&student=${classroom[c] + student}`) {
+        setAnswers(json.answers)
+      }
     } catch (e) {
       setErr(e)
     } finally {
