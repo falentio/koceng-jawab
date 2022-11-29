@@ -35,7 +35,7 @@ async function getQuestions(subject: keyof typeof subjects, student: number, use
       "sec-fetch-site": "same-origin",
       "sec-gpc": "1",
       "x-same-domain": "1",
-      "user-agent": userAgent.replaceAll(")", ()=> Math.random().toString(36)),
+      "user-agent": userAgent,
       //"cookie": `1P_JAR=${new Date().toISOString().slice(0, 10)}-1; AEC=AakniGP_${Math.random().toString(36).slice(3)}A4tDEiztUvpxei-pOjAW0QgSvOXG_RAXAuceRXnqw; NID=511=rrly3ll_${Math.random().toString(36).slice(3)}NRE20L4aoR6Q7LbceTvB7c6EaHYiq1czHDadO5pdKTtLwd4_${Math.random().toString(36).slice(3)}MT9a8wgsdfoDBz9T3QoUOJqG_o2bF_e7bB9_unozu3jT-${Math.random().toString(36).slice(3)}${Math.random().toString(36).slice(3)}`,
     },
     "referrer": "https://script.google.com/macros/s/AKfycby1LQUD6BfG4lDkTgZgbnkCJXgyBHe8-h3JwCQvLoIb3YHeRv7MuIBmOpeIxi4z4muHNw/exec",
