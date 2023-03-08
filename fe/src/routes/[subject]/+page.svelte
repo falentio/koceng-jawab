@@ -39,7 +39,7 @@
 		<div class="flex-auto"></div>
 		<button class="bg-blue-300 rounded p-2" on:click={() => {
 			let text = ""
-			for (let i = 1; i <= data.questions.length) {
+			for (let i = 1; i <= data.questions.length; i++) {
 				const a = answ[i]
 				text += `${i}.) ${a || ""}`
 				text += "\n"
