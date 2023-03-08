@@ -39,10 +39,11 @@
 		<div class="flex-auto"></div>
 		<button class="bg-blue-300 rounded p-2" on:click={() => {
 			let text = ""
-			answ.forEach((a, i) => {
-				text += `${i}.) ${a || "-"}`
+			for (let i = 0; i < data.questions.length) {
+				const a = answ[i]
+				text += `${i}.) ${a || ""}`
 				text += "\n"
-			})
+			}
 			navigator.clipboard?.writeText(text)
 		}}> Copy All </button>
 	</div>
