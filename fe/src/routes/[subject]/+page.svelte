@@ -6,17 +6,17 @@
 	$: current = Math.min(data.questions.length, current)
 	$: question = data.questions.find(q => q.number === current)
 	let answ = []
+	let x = null
 	let l = false
 	if (browser) {
 		try {
-			const str = localStorage.getItem("answ") || "[]"
-			// answ = JSON.parse(str)
+			const str = localStorage.getItem("answ-" + data.subject) || "[]"
+			answ = JSON.parse(str)
 			l = true
 		} catch {
-			localStorage?.setItem("answ", "[]")
 		}
 	}
-	$: l && browser && localStorage.setItem("answ", JSON.stringify(answ))
+	$: l && browser && localStorage.setItem("answ-" + data.subject, JSON.stringify(answ))
 </script>
 
 <div class="flex flex-row overflow-x-auto space-x-2">
@@ -35,9 +35,6 @@
 
 <div class="flex flex-col mt-4">
 	<h1> Jawab </h1>
-	{JSON.stringify(answ)}
-	{current}
-	{answ[current]}
 	<div class="w-full flex-row flex space-x-2">
 		{#each ["A", "B", "C", "D", "E", "-"] as a}
 			<button 
