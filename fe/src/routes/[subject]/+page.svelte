@@ -40,7 +40,7 @@
 		<button class="bg-blue-300 rounded p-2" on:click={() => {
 			let text = ""
 			answ.forEach((a, i) => {
-				text += `${i}.) ${a}`
+				text += `${i}.) ${a || "-"}`
 				text += "\n"
 			})
 			navigator.clipboard?.writeText(text)
