@@ -42,6 +42,7 @@ function getExam(str: string): Exam {
 	return { subject, questions }
 }
 
+
 const d = (n: number) => new Promise(r => setTimeout(r, n))
 const exams = q.map(i => getExam(i))
 for (const { subject, questions } of exams) {
