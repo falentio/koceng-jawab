@@ -33,8 +33,19 @@
 	{/each}
 </div>
 
-<div class="flex flex-col mt-4">
-	<h1> Jawab </h1>
+<div class="flex flex-col mt-4 space-y-2 p-4">
+	<div class="w-full flex-row flex">
+		<h1> Jawab </h1>
+		<div class="flex-auto"></div>
+		<button class="bg-blue-300 rounded p-2" on:click={() => {
+			let text = ""
+			answ.forEach((a, i) => {
+				text += `${i}.) ${a}`
+				text += "\n"
+			})
+			navigator.clipboard?.writeText(text)
+		}}> Copy All </button>
+	</div>
 	<div class="w-full flex-row flex space-x-2">
 		{#each ["A", "B", "C", "D", "E", "-"] as a}
 			<button 
