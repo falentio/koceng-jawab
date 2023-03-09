@@ -25,28 +25,48 @@ const endpoint = () => `https://script.google.com/macros/s/AKfycby1LQUD6BfG4lDkT
 async function getQuestions(subject: keyof typeof subjects, student: number, userAgent = defaultUserAgent()) {
   const body = new URLSearchParams()
   body.set("request", JSON.stringify(["ambilMapel",`[${student},${subjects[subject]}]`,null,[0],null,null,true,0]))
-  const req = new Request(endpoint(), {
-    "headers": {
-      "accept": "*/*",
-      "accept-language": "en-US,en;q=0.9",
-      "content-type": "application/x-www-form-urlencoded;charset=UTF-8",
-      "sec-fetch-dest": "empty",
-      "sec-fetch-mode": "cors",
-      "sec-fetch-site": "same-origin",
-      "sec-gpc": "1",
-      "x-same-domain": "1",
-      "user-agent": userAgent,
-      //"cookie": `1P_JAR=${new Date().toISOString().slice(0, 10)}-1; AEC=AakniGP_${Math.random().toString(36).slice(3)}A4tDEiztUvpxei-pOjAW0QgSvOXG_RAXAuceRXnqw; NID=511=rrly3ll_${Math.random().toString(36).slice(3)}NRE20L4aoR6Q7LbceTvB7c6EaHYiq1czHDadO5pdKTtLwd4_${Math.random().toString(36).slice(3)}MT9a8wgsdfoDBz9T3QoUOJqG_o2bF_e7bB9_unozu3jT-${Math.random().toString(36).slice(3)}${Math.random().toString(36).slice(3)}`,
-    },
-    "referrer": "https://script.google.com/macros/s/AKfycby1LQUD6BfG4lDkTgZgbnkCJXgyBHe8-h3JwCQvLoIb3YHeRv7MuIBmOpeIxi4z4muHNw/exec",
-    "referrerPolicy": "strict-origin-when-cross-origin",
+  // const req = new Request(endpoint(), {
+  //   "headers": {
+  //     "accept": "*/*",
+  //     "accept-language": "en-US,en;q=0.9",
+  //     "content-type": "application/x-www-form-urlencoded;charset=UTF-8",
+  //     "sec-fetch-dest": "empty",
+  //     "sec-fetch-mode": "cors",
+  //     "sec-fetch-site": "same-origin",
+  //     "sec-gpc": "1",
+  //     "x-same-domain": "1",
+  //     "user-agent": userAgent,
+  //     //"cookie": `1P_JAR=${new Date().toISOString().slice(0, 10)}-1; AEC=AakniGP_${Math.random().toString(36).slice(3)}A4tDEiztUvpxei-pOjAW0QgSvOXG_RAXAuceRXnqw; NID=511=rrly3ll_${Math.random().toString(36).slice(3)}NRE20L4aoR6Q7LbceTvB7c6EaHYiq1czHDadO5pdKTtLwd4_${Math.random().toString(36).slice(3)}MT9a8wgsdfoDBz9T3QoUOJqG_o2bF_e7bB9_unozu3jT-${Math.random().toString(36).slice(3)}${Math.random().toString(36).slice(3)}`,
+  //   },
+  //   "referrer": "https://script.google.com/macros/s/AKfycby1LQUD6BfG4lDkTgZgbnkCJXgyBHe8-h3JwCQvLoIb3YHeRv7MuIBmOpeIxi4z4muHNw/exec",
+  //   "referrerPolicy": "strict-origin-when-cross-origin",
+  //   body,
+  //   "method": "POST",
+  //   "mode": "cors",
+  //   "credentials": "include"
+  // });
+  // const res = await fetch(req)
+  const res = await fetch("https://script.google.com/macros/s/AKfycbyfZGjtooi6ClKGA_35BIpQ21dFroLsuQ1Nk1zaL3Mv2YzF4tw8XPF0U4DTY2fQxtWrew/callback?nocache_id=" + Math.random() * 0xffff, {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "referer": "https://script.google.com/macros/s/AKfycbyfZGjtooi6ClKGA_35BIpQ21dFroLsuQ1Nk1zaL3Mv2YzF4tw8XPF0U4DTY2fQxtWrew/exec",
+    "content-type": "application/x-www-form-urlencoded;charset=UTF-8",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "sec-gpc": "1",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "x-same-domain": "1"
+  },
+  "referrer": "https://script.google.com/macros/s/AKfycbyfZGjtooi6ClKGA_35BIpQ21dFroLsuQ1Nk1zaL3Mv2YzF4tw8XPF0U4DTY2fQxtWrew/exec",
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  // "body": "request=%5B%22ambilMapel%22%2C%22%5B330%2C14%5D%22%2Cnull%2C%5B0%5D%2Cnull%2Cnull%2Ctrue%2C0%5D",
     body,
-    "method": "POST",
-    "mode": "cors",
-    "credentials": "include"
-  });
-  const res = await fetch(req)
-
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "omit"
+});
   if (!res.ok) {
     console.error(await res.text())
     console.error(req)
