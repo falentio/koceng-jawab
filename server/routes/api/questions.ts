@@ -79,7 +79,7 @@ async function getQuestions(subject: keyof typeof subjects, student: number, use
   const [questions, answers] = data.split("#")
 
   return {
-    answers: answers.slice(0, -1).split("|"),
+    answers: answers.split("|"),
   }
 }
 
