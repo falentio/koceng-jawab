@@ -78,7 +78,7 @@ export default function Counter(props: CounterProps) {
         </label>
         <label class="flex flex-col">
           <span> Absen </span>
-          <input type="number" min="1" max="35" class="bg-gray-100 h-10" 
+          <input type="number" min="1" class="bg-gray-100 h-10" 
             onChange={(e) => setStudent(+e.target.value)} 
             onKeyDown={(e) => setStudent(+e.target.value)} 
             onKeyUp={(e) => setStudent(+e.target.value)} 
